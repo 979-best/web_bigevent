@@ -52,16 +52,16 @@ function renderAvatar(user) {
     //获取用户的名称
     var name = user.nickname || user.username;
     // 设置欢迎的文本
-    $("#welcom").html("欢迎&nbsp;&nbsp" + name);
+    $("#welcome").html("欢迎&nbsp;&nbsp;" + name);
     //按需求渲染用户的头像
     if (user.user_pic !== null) {
         // 渲染图片头像
-        $(".layui-nav-img").arr("src".user.user_pic).show();
+        $(".layui-nav-img").attr("src", user.user_pic).show();
         $(".text-avatar").hide();
     } else {
         // 渲染文本头像
         $(".layui-nav-img").hide();
-        var frist = name[0].toUpperCase();
-        $(".text-avatar").html(frist).show();
+        var first = name[0].toUpperCase();
+        $(".text-avatar").html(first).show();
     }
 }
